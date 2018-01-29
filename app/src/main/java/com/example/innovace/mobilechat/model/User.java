@@ -5,10 +5,13 @@ package com.example.innovace.mobilechat.model;
  */
 
 public class User {
-    String userNmae,PassWord;
+    String userNmae,PassWord,firstName,lastName;
 
 
-    public User(){
+    public User(String userName,String firstName,String lastName){
+        this.userNmae = userName;
+        this.firstName =firstName;
+        this.lastName = lastName;
 
     }
 
@@ -16,6 +19,8 @@ public class User {
         this.userNmae = userNmae;
         PassWord = passWord;
     }
+
+
 
     public String getUserNmae() {
         return userNmae;

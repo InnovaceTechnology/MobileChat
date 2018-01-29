@@ -37,6 +37,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.innovace.mobilechat.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -385,14 +386,23 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             String  userName = userNameField.getText().toString();
                             String  userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                            // https://mobile-chat-dd731.firebaseio.com/
+                            // https://mobile-chat-dd731.firebaseio.com/mobile-chat-dd731/user/eA0eorX7IuXncKNQAqHpD5JFLAE3/profile/username
 
-                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+
+                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference myRef = database.getReference("user");
 
                             myRef.setValue("Hello, World!");
 
-                            FirebaseDatabase.getInstance().getReference("user").child(userId);
+                            User user = new User(userName,"Empty","Empty");
+
+
+                            FirebaseDatabase.getInstance().getReference("user").child(userId).child("profile")
+                            .setValue(user);
+                            Intent intent = new Intent(getActivity(),ChatApp.class);
+                            startActivity(intent);
+
 
 
                         }

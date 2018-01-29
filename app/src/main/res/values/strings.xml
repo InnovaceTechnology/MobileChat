@@ -10,7 +10,7 @@
     <string name="password">Password</string>
     <string name="signin">signin</string>
     <string name="cancel">Cancel</string>
-    <string name="prompt_user_name">pls enter a user name</string>
+    <string name="prompt_user_name">Enter a user name</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
